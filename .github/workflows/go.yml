@@ -34,4 +34,4 @@ jobs:
       with:
         context: .
         tags: docker.pkg.github.com/${{ github.repository }}/notify-telegram:latest
-        load: true
+        push: true
