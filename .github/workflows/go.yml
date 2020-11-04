@@ -35,3 +35,4 @@ jobs:
         context: .
         tags: docker.pkg.github.com/${{ github.repository }}:latest
         push: true
+        load: true
