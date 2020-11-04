@@ -18,19 +18,14 @@ jobs:
     
     - name: Build go
       run: CGO_ENABLED=0 go build -v -o notify-telegram .
-    
-    - name: Build docker image
-      uses: docker/build-push-action@v1
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v1 
       with:
+        registry: ghcr.io
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
-        repository: docker.pkg.github.com/${{ github.repository }}
-#     - name: Build
-#       run: exit 1
-      
-#     - uses: yanzay/notify-telegram@master
-#       if: always()
-#       with:
-#         chat: ${{ secrets.chat }}
-#         token: ${{ secrets.token }}
-#         status: ${{ job.status }}
+    - name: Build docker image
+      uses: docker/build-push-action@v2
+      with:
+        tags: ghcr.io/${{ github.repository }}:latest
+        push: true
