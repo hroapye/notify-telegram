@@ -18,6 +18,9 @@ jobs:
     
     - name: Build go
       run: CGO_ENABLED=0 go build -v -o notify-telegram .
+    - run: |
+        ls -ltra 
+        pwd
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
     - name: Login to GitHub Container Registry
