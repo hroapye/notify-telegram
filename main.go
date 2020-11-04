@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/hroapye/telegram-bot/v2"
+	"github.com/yanzay/tbot/v2"
 )
 
 func main() {
