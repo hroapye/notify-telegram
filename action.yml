@@ -8,12 +8,15 @@ inputs:
   token:
     description: 'Telegram Bot token'
     required: true
-  status:
-    description: 'Job status'
-    required: true
+  message:
+    description: 'send message text'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  pre-entrypoint: 'pre.sh'
+  entrypoint: 'entrypoint.sh'
+  post-entrypoint: 'post.sh'
 branding:
   icon: 'send'
   color: 'blue'
