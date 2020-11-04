@@ -24,10 +24,7 @@ jobs:
       with:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
-        registry: docker.pkg.github.com
-        repository: ${{ github.repository }}
-        tag_with_ref: true
-
+        repository: docker.pkg.github.com/${{ github.repository }}
 #     - name: Build
 #       run: exit 1
       
