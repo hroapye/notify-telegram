@@ -16,12 +16,12 @@ jobs:
     - name: Check out code into the Go module directory
       uses: actions/checkout@v1
 
-    - name: Build
-      run: exit 1
+#     - name: Build
+#       run: exit 1
       
-    - uses: yanzay/notify-telegram@master
-      if: always()
-      with:
-        chat: ${{ secrets.chat }}
-        token: ${{ secrets.token }}
-        status: ${{ job.status }}
+#     - uses: yanzay/notify-telegram@master
+#       if: always()
+#       with:
+#         chat: ${{ secrets.chat }}
+#         token: ${{ secrets.token }}
+#         status: ${{ job.status }}
